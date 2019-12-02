@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<form name="form">
+        <input  class="textarea" name="textview"  >
+</form>
+    <table>
+         <tr>
+             
+         </tr>   
+
+         <tr>
+            <td><input type="button" id="clear"  class="insert" value="C"></td>
+            <td><input type="button"  class="insert" value="<"></td>
+            <td><input type="button"  class="insert" value=">"></td>
+            <td><input type="button"  class="insert" value="x"></td>
+        </tr>
+        <br>
+        <tr>
+        <td><input type="button"  class="insert" value="9"></td>
+        <td><input type="button"  class="insert" value="8"></td>
+        <td><input type="button"  class="insert" value="7"></td>
+        <td><input type="button"  class="insert" value="-"></td>
+            </tr>
+            <br>
+            <tr>
+            <td><input type="button"  class="insert" value="6"></td>
+            <td><input type="button"  class="insert" value="5"></td>
+            <td><input type="button"  class="insert" value="4"></td>
+            <td><input type="button"  class="insert" value="+"></td>
+                </tr>
+                <br>
+                <tr>
+            <td><input type="button"  class="insert" value="3"></td>
+            <td><input type="button"  class="insert" value="2"></td>
+            <td><input type="button"  class="insert" value="1"></td>
+            <td rowspan="4"><input style="height:103px;" type="button" id="add" class="insert" value="="></td>
+                    </tr>
+                  
+                    <tr>
+                    
+             <td><input type="button"  class="insert" value="."></td>
+             <td   ><input style=" "  type="button" class="insert" value="0"></td>
+             <td   ><input style=" "  type="button" class="insert" value="/"></td>
+             
+
+                    </tr>
+                    <br>
+    </table>
+    
+
+    <script>
+
+ var btn =  document.querySelectorAll(".insert");
+ var sum = document.getElementById("add");
+ var clear = document.getElementById("clear");
+
+ //for looping 
+ for(var i =0;i<btn.length;i++){
+     //adding event to each button
+     btn[i].addEventListener("click",function(){
+        
+         
+            document.form.textview.value += this.value;
+
+         
+     })
+ } 
+  sum.addEventListener("click",function(){
+      var add = document.form.textview.value;
+     var t= add.replace("=","");
+     console.log(t);
+       if(t){
+           document.form.textview.value = eval(t);
+       }
+       else{
+            alert("Please enter number");
+            document.form.textview.value = "";
+       }
+  })
+
+  clear.addEventListener("click",function(){
+      document.form.textview.value = "";
+  })
+ 
+     
+    </script>
+</body>
+</html>
