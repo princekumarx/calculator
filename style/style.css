@@ -39,7 +39,6 @@ body table td .insert {
 }
 
 body table td .insert:focus {
-  outline: none;
-  border: 2px solid #045063;
-}
+                       outline-color: rgb(255, 0, 119);
+ }
 /*# sourceMappingURL=style.css.map */
