@@ -9,7 +9,7 @@
 </head>
 <body>
 <form name="form">
-        <input  class="textarea" name="textview"  >
+        <input type="number" class="textarea" name="textview"  >
 </form>
     <table>
          <tr>
@@ -68,7 +68,7 @@
      btn[i].addEventListener("click",function(){
         
          
-            document.form.textview.value += this.value;
+            document.form.textview.value += this.value + " ";
 
          
      })
